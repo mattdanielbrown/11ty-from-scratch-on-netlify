@@ -1,0 +1,12 @@
+{
+  "name": "11ty-from-scratch-on-netlify",
+  "version": "1.0.0",
+  "description": "11ty Site From Scratch Deployed On Netlify",
+  "main": "index.js",
+  "author": "Matt Daniel Brown <mattdbrown@protonmail.com> (https://mattdbrown.com)",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  }
+}
