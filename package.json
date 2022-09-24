@@ -6,7 +6,26 @@
   "author": "Matt Daniel Brown <mattdbrown@protonmail.com> (https://mattdbrown.com)",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "watch:sass": "sass --watch css:dist/css",
+    "build:sass": "sass css:dist/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "bourbon": "^7.2.0",
+    "inter-ui": "^3.19.3",
+    "mobi.css": "^3.1.1",
+    "modern-normalize": "^1.1.0",
+    "reseter.css": "^2.0.0",
+    "sanitize.css": "^13.0.0"
   }
 }

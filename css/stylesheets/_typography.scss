@@ -1,0 +1,43 @@
+
+
+
+/* Set important defaults for html and body layout */
+html {
+	//noinspection CssInvalidPropertyValue
+	font-size-adjust : 100%;
+	font-size        : var(--base-fontsize);
+}
+
+html,body {
+	background-color : $bg-color;
+	color            : $txt-color;
+	font-family      : $primary-fontstack;
+	line-height : 1;
+}
+
+body {
+	font-size : 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height : 1;
+	margin : 0 auto 1rem;
+	font-weight : 600;
+	font-family : inherit;
+	small {
+		display : block;
+		width : 100%;
+		margin-top : 1rem;
+		font-family : inherit;
+	}
+}
+
+p {
+	line-height : 1.5;
+	font-size : 1em;
+	margin : 0 auto 1em;
+	font-family : inherit;
+	& ~ p {
+		margin-bottom : 2em;
+	}
+}

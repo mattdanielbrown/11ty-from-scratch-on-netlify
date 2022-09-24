@@ -1,0 +1,8 @@
+{#{% macro navigationListItemLink(linkURL,linkText,isCurrent = false) %}#}
+{#	<a href="{{ linkURL }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ linkText }}</a>#}
+{#{% endmacro %}#}
+
+{% macro navlink(text='', url, current=false) %}
+	{% set currentAttribute = 'aria-current="page"' %}
+	<a href="{{ url }}" {{ currentAttribute if current }}>{{ text }}</a>
+{% endmacro %}

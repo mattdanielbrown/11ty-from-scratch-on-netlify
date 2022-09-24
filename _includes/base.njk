@@ -1,0 +1,48 @@
+<!DOCTYPE html><!--[if lte IE 8 ]><html class="lte-ie8" lang="en"><![endif]--><!--[if IE 9 ]><html class="ie9" lang="en">
+<![endif]--><!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,shrink-to-fit=no,viewport-fit=cover"/>
+  <title>{{ site.title }}</title>
+  <!--suppress HtmlUnknownTarget -->
+  <link href="/css/style.css" rel="stylesheet">
+  <meta name="author" content="{{ site.authorName }}">
+  <meta name="description" content="{{ site.description }}">
+  <link rel="icon" href="{{ site.favicon }}" type="image/svg+xml"/>
+</head>
+<body>
+  
+  {% macro navlink(text, url, current=false) %}
+    {% set currentAttribute = 'aria-current="page"' %}
+    <a href="{{ url }}" {{ currentAttribute if current }}>{{ text }}</a>
+  {% endmacro %}
+  
+  
+  <nav>
+    <ul>
+      {% for naviationListItemLink in navLinks %}
+        <li>{{ navlink(naviationListItemLink.text,naviationListItemLink.url,naviationListItemLink.current) }}</li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <header>
+    <hgroup>
+      <h1>
+        {{ site.title }}
+        <small>{{ title }}</small>
+      </h1>
+    </hgroup>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <p>Copyright &copy; 2022. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

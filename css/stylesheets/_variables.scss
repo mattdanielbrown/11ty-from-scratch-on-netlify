@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+
+/** SCSS Variable Declarations & Definitions **/
+$fallback-fontstack : -apple-system, BlinkMacSystemFont,
+'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
+$primary-fontstack  : 'Inter', $fallback-fontstack !default;
+
+$txt-color          : #434343 !default;
+$bg-color           : #fff !default;
+$bg-color--alt      : ghostwhite !default;
+
+/* From OpenColor (https://yeun.github.io/open-color) */
+$_color-indigo      : #617ef2;
+$_color-violet      : #845ef7;
+$_color-red         : #ff6b6b;
+$_color-green       : #51cf66;
+$_color-orange      : #ff922b;
+$_color-gray8       : #343a40;
+
+/* Theme Colors */
+$primary-color      : $_color-indigo !default;
+$secondary-color    : $_color-gray8 !default;
+$success-color      : $_color-green !default;
+$warning-color      : $_color-orange !default;
+$danger-color       : $_color-red !default;
+
+$base-fontsize      : 1.125em !default;
+
+$transition         : all 120ms ease-out !default;
+
+
+/** CSS Variable Property Declarations & Definitions **/
+:root {
+	--fallback-fontstack : -apple-system, BlinkMacSystemFont,
+	'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	
+	--primary-fontstack  : 'Inter UI', 'Inter', $fallback-fontstack;
+	
+	--txt-color          : #434343;
+	--bg-color           : #fff;
+	--bg-color--alt      : ghostwhite;
+	
+	--color-indigo       : #617ef2;
+	--color-violet       : #845ef7;
+	--color-red          : #ff6b6b;
+	--color-green        : #51cf66;
+	--color-orange       : #ff922b;
+	--color-gray8        : #343a40;
+	
+	--primary-color      : var(--color-indigo);
+	--secondary-color    : var(--color-gray8);
+	--success-color      : var(--color-green);
+	--warning-color      : var(--color-orange);
+	--danger-color       : var(--color-red);
+	
+	--font-size--smallest: 100%;
+	--font-size--small   : 112.5%;
+	--font-size--medium  : 120%;
+	--font-size--large   : 125%;
+	
+	// --base-fontsize      : 1.125em;
+	--base-fontsize      : var(--font-size--smallest);
+	--transition         : all 120ms ease-out;
+	
+	@media screen and (min-width : 640px) {
+		--base-fontsize : var(--font-size--small);
+	}
+	@media screen and (min-width : 960px) {
+		--base-fontsize : var(--font-size--medium);
+	}
+	@media screen and (min-width : 1440px) {
+		--base-fontsize : var(--font-size--large);
+	}
+	
+}

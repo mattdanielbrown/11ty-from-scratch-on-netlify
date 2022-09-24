@@ -1,0 +1,4 @@
+Sitemap: https://11ty-from-scratch-on-netlify.netlify.app/sitemap.xml
+
+User-agent: *
+Disallow:
