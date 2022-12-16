@@ -124,6 +124,7 @@ nav {
 		@include min-width(600px) {
 			//noinspection ALL
 			ul {
+				display : flex;
 				align-items     : unset;
 				width           : 92%;
 				max-width       : 768px;
@@ -131,15 +132,15 @@ nav {
 				margin          : 0 auto;
 				flex-direction  : row !important;
 				gap             : 0 !important;
-				justify-content : flex-end;
+				justify-content : flex-end !important;
 				vertical-align  : middle;
 				
 				li {
 					display        : inline-flex;
 					gap            : 0;
 					width          : unset !important;
-					margin         : 0;
-					padding        : 0;
+					margin         : 0 !important;
+					padding        : 0 !important;
 					vertical-align : middle;
 					
 					a {
@@ -147,7 +148,7 @@ nav {
 						width          : unset !important;
 						padding        : 1em !important;
 						line-height    : 1;
-						margin         : 0;
+						margin         : 0 !important;
 						vertical-align : middle;
 						align-items    : center;
 					}
