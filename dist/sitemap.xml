@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+        <url>
+            <loc>https://11ty-from-scratch-on-netlify.netlify.app//</loc>
+            <lastmod>2022-09-24T22:00:12.184Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://11ty-from-scratch-on-netlify.netlify.app//posts/my-first-post/</loc>
+            <lastmod>2022-09-24T22:02:04.212Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://11ty-from-scratch-on-netlify.netlify.app//posts/my-second-post/</loc>
+            <lastmod>2022-09-24T22:02:18.728Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://11ty-from-scratch-on-netlify.netlify.app//404.html</loc>
+            <lastmod>2022-09-24T22:13:33.824Z</lastmod>
+        </url>
+    
+</urlset>

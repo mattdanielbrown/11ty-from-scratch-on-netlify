@@ -304,7 +304,7 @@ typings/
 .nuxt
 
 # rollup.js default build output
-dist/
+#dist/
 
 # Uncomment the public line if your project uses Gatsby
 # https://nextjs.org/blog/next-9-1#public-directory-support
@@ -651,4 +651,3 @@ temp/
 
 
 # End of https://www.gitignore.io/api/osx,node,macos,webstorm,phpstorm,jetbrains,phpstorm+iml,phpstorm+all,webstorm+all,webstorm+iml,jetbrains+all,jetbrains+iml
-
