@@ -166,8 +166,9 @@ nav ul li a[aria-current=page], nav ul li a:link[aria-current=page], nav ul li a
   cursor: not-allowed !important;
   pointer-events: none !important;
 }
+
 @media screen and (min-width: 600px) {
-  nav ul ul {
+  nav ul {
     display: flex;
     align-items: unset;
     width: 92%;
@@ -179,7 +180,7 @@ nav ul li a[aria-current=page], nav ul li a:link[aria-current=page], nav ul li a
     justify-content: flex-end !important;
     vertical-align: middle;
   }
-  nav ul ul li {
+  nav ul li {
     display: inline-flex;
     gap: 0;
     width: unset !important;
@@ -187,7 +188,7 @@ nav ul li a[aria-current=page], nav ul li a:link[aria-current=page], nav ul li a
     padding: 0 !important;
     vertical-align: middle;
   }
-  nav ul ul li a {
+  nav ul li a {
     display: inline-block !important;
     width: unset !important;
     padding: 1em !important;
