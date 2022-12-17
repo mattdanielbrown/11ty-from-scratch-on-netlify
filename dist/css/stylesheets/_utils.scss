@@ -33,3 +33,36 @@
 		}
 	}
 }
+
+%visually-hidden {
+	position    : absolute;
+	white-space : nowrap;
+	width       : 1px;
+	height      : 1px;
+	overflow    : hidden;
+	border      : 0;
+	padding     : 0;
+	clip        : rect(0 0 0 0);
+	clip-path   : inset(50%);
+	margin      : -1px;
+}
+
+%focus-fx {
+	border : solid 2px $primary-color;
+	outline : solid 4px rgba($primary-color,.25) !important;
+	outline-offset : -4px;
+}
+
+%focus-fx-no-border {
+	outline        : solid 2px $primary-color !important;
+	outline-offset : -2px;
+	border : none !important;
+	box-shadow : 0 0 0 4px faded-color();
+}
+	
+	%apply-focus-fx {
+	&:focus {
+		outline : solid 4px rgba($primary-color, .25) !important;
+		outline-offset: -4px;
+	}
+}

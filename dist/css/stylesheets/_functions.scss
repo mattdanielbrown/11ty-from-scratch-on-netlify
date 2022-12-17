@@ -1,0 +1,25 @@
+
+
+@function faded-color($color:$primary-color,$alpha:.5) {
+	@return rgba($color,$alpha);
+}
+
+@function color-with-alpha($color:$primary-color,$alpha:.5) {
+	@return rgba($color, $alpha);
+}
+
+@function color-with-opacity($color:$primary-color,$alpha:.5) {
+	@return rgba($color, $alpha);
+}
+
+@function hover-color($color: $primary-color) {
+	@return darken($color, 10%);
+}
+
+@function focus-color($color: $primary-color) {
+	@return darken($color, 15%);
+}
+
+@function active-color($color: $primary-color) {
+	@return darken($color, 20%);
+}

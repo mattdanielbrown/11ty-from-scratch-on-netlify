@@ -14,19 +14,28 @@
 <body>
   
   {% macro navlink(text, url, current=false) %}
-    {% set currentAttribute = 'aria-current="page"' %}
+    {% set currentAttribute = "aria-current=page" %}
     <a href="{{ url }}" {{ currentAttribute if current }}>{{ text }}</a>
   {% endmacro %}
   
-  
+  <!-- ————————————————————————————————————————————————————————————————————— -->
+  <!-- Site/Page Navigation 																								                         -->
+  <!-- ————————————————————————————————————————————————————————————————————— -->
   <nav>
+    <input type="checkbox" name="mobile-navigation-control" id="mobile-navigation-control">
+    <label for="mobile-navigation-control" id="mobile-navigation-control-label">
+      <span class="mobile-navigation-control-label-text" id="mobile-navigation-control-label-text">Menu</span>
+    </label>
     <ul>
-      {% for naviationListItemLink in navLinks %}
-        <li>{{ navlink(naviationListItemLink.text,naviationListItemLink.url,naviationListItemLink.current) }}</li>
+      {% for navListItem in navLinks %}
+        <li>{{ navlink(navListItem.text,navListItem.url,navListItem.current) }}</li>
       {% endfor %}
     </ul>
   </nav>
 
+  <!-- ————————————————————————————————————————————————————————————————————— -->
+  <!-- Site/Page Header 																										                           -->
+  <!-- ————————————————————————————————————————————————————————————————————— -->
   <header>
     <hgroup>
       <h1>
@@ -36,13 +45,23 @@
     </hgroup>
   </header>
 
+  <!-- ————————————————————————————————————————————————————————————————————— -->
+  <!-- Main Page Content  																									                          -->
+  <!-- ————————————————————————————————————————————————————————————————————— -->
   <main>
     {{ content | safe }}
   </main>
 
+  <!-- ————————————————————————————————————————————————————————————————————— -->
+  <!-- Site/Page Footer 																										                           -->
+  <!-- ————————————————————————————————————————————————————————————————————— -->
   <footer>
     <p>Copyright &copy; 2022. All Rights Reserved.</p>
   </footer>
 
+  <!-- ===================================================================== -->
+  <!-- Javascript	 																								 					                            -->
+  <!-- ===================================================================== -->
+  <script src="/js/main.js"></script>
 </body>
 </html>

@@ -49,6 +49,26 @@
   }
 }
 
+#mobile-navigation-control {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+#mobile-navigation-control-label:focus, #mobile-navigation-control:focus ~ label, nav a:focus, nav a:link:focus, nav a:visited:focus {
+  outline: solid 2px #617ef2 !important;
+  outline-offset: -2px;
+  border: none !important;
+  box-shadow: 0 0 0 4px rgba(97, 126, 242, 0.5);
+}
+
 /* Box-sizing fix */
 html {
   box-sizing: border-box !important;
@@ -136,16 +156,15 @@ nav ul {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  align-content: center;
   gap: 0;
 }
 nav ul li {
   display: block;
   gap: 0;
-  width: auto;
   margin: 0;
   padding: 0;
   vertical-align: middle;
+  width: 100%;
 }
 nav ul li a, nav ul li a:link, nav ul li a:visited {
   line-height: 1.5;
@@ -159,12 +178,26 @@ nav ul li a, nav ul li a:link, nav ul li a:visited {
   padding: 1em 0;
   transition: all 120ms ease-out;
   background-color: #333;
+  border: none;
 }
 nav ul li a[aria-current=page], nav ul li a:link[aria-current=page], nav ul li a:visited[aria-current=page] {
   background-color: black !important;
   color: rgba(255, 255, 255, 0.5) !important;
   cursor: not-allowed !important;
   pointer-events: none !important;
+}
+
+nav a, nav a:link, nav a:visited {
+  background-color: #333;
+}
+nav a:hover, nav a:link:hover, nav a:visited:hover {
+  background-color: #262626;
+}
+nav a:focus, nav a:link:focus, nav a:visited:focus {
+  background-color: #1a1a1a;
+}
+nav a:active, nav a:link:active, nav a:visited:active {
+  background-color: #0d0d0d;
 }
 
 @media screen and (min-width: 600px) {
@@ -244,6 +277,86 @@ p {
 }
 p ~ p {
   margin-bottom: 2em;
+}
+
+#mobile-navigation-control {
+  appearance: none;
+  cursor: pointer;
+  transition: all 120ms ease-out;
+  user-select: none;
+}
+#mobile-navigation-control:hover ~ label {
+  background-color: #090909;
+}
+#mobile-navigation-control:focus ~ label {
+  background-color: black;
+}
+#mobile-navigation-control:active ~ label {
+  background-color: black;
+}
+
+#mobile-navigation-control-label {
+  background-color: #222;
+  color: white;
+  display: inline-block;
+  padding: 1em;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 120ms ease-out;
+  user-select: none;
+  border: none;
+}
+#mobile-navigation-control-label:hover {
+  background-color: #151515;
+}
+#mobile-navigation-control-label:focus {
+  background-color: #090909;
+}
+#mobile-navigation-control-label:active {
+  background-color: black;
+}
+
+#mobile-navigation-control-label-text {
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 120ms ease-out;
+  user-select: none;
+}
+
+@media screen and (min-width: 600px) {
+  #mobile-navigation-control, #mobile-navigation-control-label,
+#mobile-navigation-control-label-text {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+    display: none !important;
+  }
+}
+@media screen and (max-width: 599px) {
+  nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  nav ul {
+    transition: all 120ms ease-out;
+    position: absolute;
+    transform: translate3d(0, -120%, 0);
+  }
+  #mobile-navigation-control:checked ~ ul {
+    transform: translate3d(0, 3em, 0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

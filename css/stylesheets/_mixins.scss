@@ -29,3 +29,79 @@
 		@content;
 	}
 }
+
+@mixin set-state-color-properties($color,$properties...) {
+	&:hover {
+		@each $property in $properties {
+			#{$property}: darken($color, 5%);
+		}
+	}
+	&:focus {
+		@each $property in $properties {
+			#{$property}: darken($color, 10%);
+		}
+	}
+	&:active {
+		@each $property in $properties {
+			#{$property}: darken($color, 15%);
+		}
+	}
+}
+
+$default-color-properties-to-change: background-color, border-color;
+
+@mixin set-all-color-properties($color,$properties...) {
+	@if($properties == default) {
+		@each $property in $default-color-properties-to-change {
+			#{$property}: $color;
+		}
+		&:hover {
+			@each $property in $default-color-properties-to-change {
+				#{$property}: darken($color, 5%);
+			}
+		}
+		&:focus {
+			@each $property in $default-color-properties-to-change {
+				#{$property}: darken($color, 10%);
+			}
+		}
+		&:active {
+			@each $property in $default-color-properties-to-change {
+				#{$property}: darken($color, 15%);
+			}
+		}
+	}
+	@else {
+		@each $property in $properties {
+			#{$property}: $color;
+		}
+		&:hover {
+			@each $property in $properties {
+				#{$property}: darken($color, 5%);
+			}
+		}
+		&:focus {
+			@each $property in $properties {
+				#{$property}: darken($color, 10%);
+			}
+		}
+		&:active {
+			@each $property in $properties {
+				#{$property}: darken($color, 15%);
+			}
+		}
+	}
+}
+
+@mixin set-normal-color-properties($color,$properties...) {
+	@if($properties == default) {
+		@each $property in $default-color-properties-to-change {
+			#{$property}: $color;
+		}
+	}
+	@else {
+		@each $property in $properties {
+			#{$property}: $color;
+		}
+	}
+}

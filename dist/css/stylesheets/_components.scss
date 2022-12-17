@@ -1,0 +1,103 @@
+
+#mobile-navigation-control {
+	appearance  : none;
+	cursor      : pointer;
+	transition  : all 120ms ease-out;
+	user-select : none;
+	@extend %visually-hidden;
+	
+	&:hover {
+		& ~ label {
+			$_this-color: hover-color(#222);
+			background-color : $_this-color;
+			// @include set-state-color-properties($_this-color, background-color);
+			// @include set-normal-color-properties($_this-color, background-color);
+		}
+	}
+	&:focus {
+		& ~ label {
+			$_this-color : focus-color(#222);
+			background-color : $_this-color;
+			// @include set-state-color-properties($_this-color, background-color);
+			// @include set-normal-color-properties($_this-color, background-color);
+		}
+	}
+	&:active {
+		& ~ label {
+			$_this-color : active-color(#222);
+			// @include set-state-color-properties($_this-color, background-color);
+			background-color : $_this-color;
+		}
+	}
+}
+#mobile-navigation-control:focus ~ label {
+	@extend %focus-fx-no-border;
+}
+
+#mobile-navigation-control-label {
+	$_this-color : #222;
+	@include set-all-color-properties($_this-color, background-color);
+	color       : white;
+	display : inline-block;
+	padding : 1em;
+	cursor      : pointer;
+	font-size   : 1em;
+	font-weight : 600;
+	transition  : all 120ms ease-out;
+	user-select : none;
+	border : none;
+}
+#mobile-navigation-control-label:focus {
+	@extend %focus-fx-no-border;
+}
+
+#mobile-navigation-control-label-text {
+	color       : white;
+	cursor      : pointer;
+	font-size   : 1em;
+	font-weight : 600;
+	transition  : all 120ms ease-out;
+	user-select : none;
+}
+
+@include min-width(600px) {
+	#mobile-navigation-control, #mobile-navigation-control-label,
+	#mobile-navigation-control-label-text {
+		
+		//==========================================================================
+		// VISUALLY HIDDEN
+		//==========================================================================
+		border      : 0             !important;
+		clip        : rect(0 0 0 0) !important;
+		clip-path   : inset(50%)    !important;
+		height      : 1px           !important;
+		margin      : -1px          !important;
+		overflow    : hidden        !important;
+		padding     : 0             !important;
+		position    : absolute      !important;
+		white-space : nowrap        !important;
+		width       : 1px           !important;
+		//==========================================================================
+		display     : none          !important;
+	}
+}
+
+@media screen and (max-width : 599px) {
+	nav {
+		position : relative;
+		display : flex;
+		flex-direction : column;
+		justify-content : flex-start;
+		
+		ul {
+			transition: all 120ms ease-out;
+			position : absolute;
+			transform: translate3d(0,-120%,0);
+		}
+	}
+	#mobile-navigation-control:checked {
+		& ~ ul {
+			transform : translate3d(0, 3em, 0);
+		}
+	}
+}
