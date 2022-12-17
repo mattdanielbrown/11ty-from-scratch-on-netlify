@@ -49,6 +49,40 @@
   }
 }
 
+ul.buttons, .button-list {
+  list-style: none none;
+  margin: unset;
+  padding: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  transition: all 200ms ease;
+}
+ul.buttons *, .button-list * {
+  transition: all 200ms ease;
+}
+ul.buttons li, .button-list li {
+  list-style: none none;
+  padding: unset;
+  display: block;
+  width: 100%;
+  margin: 0 auto 1em;
+}
+@media screen and (min-width: 560px) {
+  ul.buttons, .button-list {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  ul.buttons li, .button-list li {
+    display: inline-flex;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
 #mobile-navigation-control {
   position: absolute;
   white-space: nowrap;
@@ -284,6 +318,7 @@ p ~ p {
   cursor: pointer;
   transition: all 120ms ease-out;
   user-select: none;
+  z-index: 101;
 }
 #mobile-navigation-control:hover ~ label {
   background-color: #090909;
@@ -296,6 +331,7 @@ p ~ p {
 }
 
 #mobile-navigation-control-label {
+  z-index: 102;
   background-color: #222;
   color: white;
   display: inline-block;
@@ -318,6 +354,7 @@ p ~ p {
 }
 
 #mobile-navigation-control-label-text {
+  z-index: 102;
   color: white;
   cursor: pointer;
   font-size: 1em;
@@ -348,15 +385,136 @@ p ~ p {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    transition: all 200ms ease-in-out !important;
+    z-index: 100;
   }
   nav ul {
-    transition: all 120ms ease-out;
+    z-index: 10;
+    transition: all 200ms ease-in-out !important;
     position: absolute;
     transform: translate3d(0, -120%, 0);
+    opacity: 0;
+  }
+  nav ul li {
+    transition: all 200ms ease-in-out !important;
+  }
+  nav ul li a {
+    transition: all 200ms ease-in-out !important;
   }
   #mobile-navigation-control:checked ~ ul {
+    visibility: visible;
+    opacity: 1;
     transform: translate3d(0, 3em, 0);
   }
+}
+/* Button and Button-like Control Style Definition */
+button, .button, [role=button], [type=button],
+[type=reset], [type=submit] {
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  appearance: none !important;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  letter-spacing: 0.5px;
+  background-color: #dfdfdf;
+  border: 2px solid #dfdfdf;
+  border: none !important;
+  font-family: inherit;
+  transform: translate3d(0, 0, 0);
+  transition: all 120ms ease-out;
+  display: block;
+  width: 100%;
+  margin: 0 0 1.5em;
+  line-height: 2;
+  outline: 2px solid rgba(97, 126, 242, 0);
+  outline-offset: -2px;
+}
+@media screen and (min-width: 560px) {
+  button, .button, [role=button], [type=button],
+[type=reset], [type=submit] {
+    line-height: 1.25;
+    display: inline-block;
+    width: unset;
+    min-width: 6.25em;
+  }
+}
+button:hover, .button:hover, [role=button]:hover, [type=button]:hover,
+[type=reset]:hover, [type=submit]:hover {
+  background-color: #cbcbcb;
+}
+button:focus, .button:focus, [role=button]:focus, [type=button]:focus,
+[type=reset]:focus, [type=submit]:focus {
+  background-color: #b6b6b6;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  outline-color: #617ef2;
+  box-shadow: 0 0 0 6px rgba(97, 126, 242, 0.25);
+  -webkit-touch-callout: none !important;
+}
+button:active, .button:active, [role=button]:active, [type=button]:active,
+[type=reset]:active, [type=submit]:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  background-color: #a2a2a2;
+  transform: translate3d(0, 2px, 0);
+  -webkit-touch-callout: none !important;
+}
+
+/* Apply Button and Button-like Control Styles */
+button.primary, .button.primary, [role=button].primary, [type=button].primary,
+[type=reset].primary, [type=submit].primary {
+  background-color: #617ef2;
+  color: white;
+}
+button.primary:hover, .button.primary:hover, [role=button].primary:hover, [type=button].primary:hover,
+[type=reset].primary:hover, [type=submit].primary:hover {
+  background-color: #496bf0;
+}
+button.primary:focus, .button.primary:focus, [role=button].primary:focus, [type=button].primary:focus,
+[type=reset].primary:focus, [type=submit].primary:focus {
+  background-color: #3258ee;
+}
+button.primary:active, .button.primary:active, [role=button].primary:active, [type=button].primary:active,
+[type=reset].primary:active, [type=submit].primary:active {
+  background-color: #1a44ec;
+}
+button.secondary, .button.secondary, [role=button].secondary, [type=button].secondary,
+[type=reset].secondary, [type=submit].secondary {
+  background-color: #343a40;
+  color: white;
+}
+button.secondary:hover, .button.secondary:hover, [role=button].secondary:hover, [type=button].secondary:hover,
+[type=reset].secondary:hover, [type=submit].secondary:hover {
+  background-color: #292d32;
+}
+button.secondary:focus, .button.secondary:focus, [role=button].secondary:focus, [type=button].secondary:focus,
+[type=reset].secondary:focus, [type=submit].secondary:focus {
+  background-color: #1d2124;
+}
+button.secondary:active, .button.secondary:active, [role=button].secondary:active, [type=button].secondary:active,
+[type=reset].secondary:active, [type=submit].secondary:active {
+  background-color: #121416;
+}
+button.round, button.rounded, .button.round, .button.rounded, [role=button].round, [role=button].rounded, [type=button].round, [type=button].rounded,
+[type=reset].round,
+[type=reset].rounded, [type=submit].round, [type=submit].rounded {
+  border-radius: 2em !important;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+
+ul.buttons, .button-list {
+  gap: 1em;
+}
+ul.buttons li, .button-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+ul.buttons li *, .button-list li * {
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=style.css.map */
