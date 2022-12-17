@@ -563,19 +563,37 @@ ul.buttons li *, .button-list li * {
   appearance: none !important;
   display: block;
   width: 100%;
-  padding: 0.5em;
-  line-height: 1;
+  padding: 0.75em;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
   background-color: #fff;
-  border: 2px solid lightgray;
+  border: 2px solid darkgray;
+  border: none;
   font-size: 1em;
   color: #343a40;
   border-radius: 0.25em;
   margin-bottom: 1.5em;
   background-color: whitesmoke;
+  transition: all 200ms;
+  outline: solid 2px #dfdfdf;
+  outline-offset: -2px;
+}
+[type=color]:focus, [type=date]:focus,
+[type=datetime]:focus, [type=search]:focus,
+[type=datetime-local]:focus, [type=tel]:focus,
+[type=email]:focus, [type=month]:focus,
+[type=number]:focus, [type=password]:focus,
+[type=text]:focus, [type=time]:focus, [type=url]:focus,
+[type=week]:focus, input:not([type]):focus, textarea:focus {
+  background-color: #dfdfdf;
+  outline: solid 2px #617ef2;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 4px rgba(97, 126, 242, 0.25);
 }
 
 ::placeholder {
-  color: lightgray;
+  color: darkgray;
 }
 
 label {
@@ -583,6 +601,7 @@ label {
   width: 100%;
   font-family: inherit;
   line-height: 1.5;
+  font-weight: 500;
 }
 
 form, fieldset, legend {

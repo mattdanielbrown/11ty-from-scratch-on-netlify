@@ -238,24 +238,38 @@ ul.buttons, .button-list {
 	appearance                  : none !important;
 	display : block;
 	width : 100%;
-	padding : .5em;
-	line-height : 1;
+	padding : .75em;
+	vertical-align : middle;
+	letter-spacing : .5px;
+	line-height : 1.25;
 	background-color : #fff;
-	border : 2px solid lightgray;
+	border : 2px solid darkgray;
+	border : none;
 	font-size : 1em;
 	color: $secondary-color;
 	border-radius : .25em;
 	margin-bottom : 1.5em;
 	background-color : whitesmoke;
+	// background-color : #fff;
+	transition : all 200ms;
+	outline        : solid 2px #dfdfdf;
+	outline-offset : -2px;
+	&:focus {
+		background-color : #dfdfdf;
+		outline : solid 2px $primary-color;
+		outline-offset: -2px;
+		box-shadow : 0 0 0 4px rgba($primary-color, 0.25);
+	}
 }
 ::placeholder {
-	color: lightgray;
+	color: darkgray;
 }
 label {
 	display : block;
 	width : 100%;
 	font-family : inherit;
 	line-height : 1.5;
+	font-weight : 500;
 }
 form,fieldset,legend {
 	display : block;
