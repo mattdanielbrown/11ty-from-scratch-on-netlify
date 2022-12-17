@@ -7,6 +7,8 @@ const main = () => {
 	const mobileNavigationControlLabel      = document.getElementById('mobile-navigation-control-label');
 	const mobileNavigationControlLabelText  = document.getElementById('mobile-navigation-control-label-text');
 	
+	document.addEventListener("touchstart", function () {}, true);
+	
 	mobileNavigationControl.addEventListener("change", function () {
 		if (this.checked === true) {
 			mobileNavigationControlLabelText.innerHTML = "Close";

@@ -72,6 +72,24 @@ main {
 	}
 }
 
+a,a:link,a:visited {
+	-webkit-touch-callout       : none !important;
+	-webkit-tap-highlight-color : rgba(0, 0, 0, 0) !important;
+	user-select                 : none !important;
+	appearance                  : none !important;
+	color: $primary-color;
+	text-decoration : none !important;
+	transition : all 150ms;
+	@include set-all-color-properties($primary-color,color);
+	&:hover,&:focus,&:active {
+		text-decoration : none !important;
+		-webkit-touch-callout       : none !important;
+		-webkit-tap-highlight-color : rgba(0, 0, 0, 0) !important;
+		user-select                 : none !important;
+		appearance                  : none !important;
+	}
+}
+
 nav {
 	background-color : #333;
 	width            : 100%;
@@ -168,7 +186,7 @@ nav {
 	}
 }
 
-a[aria-current="page"] {
+a[aria-current='page'] {
 	background-color : darken(#333, 25%) !important;
 	color: rgba(white, 0.5) !important;
 	cursor : not-allowed !important;

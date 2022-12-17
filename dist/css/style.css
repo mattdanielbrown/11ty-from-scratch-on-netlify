@@ -175,6 +175,33 @@ main section, main article {
   margin-bottom: 2em;
 }
 
+a, a:link, a:visited {
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  user-select: none !important;
+  appearance: none !important;
+  color: #617ef2;
+  text-decoration: none !important;
+  transition: all 150ms;
+  color: #617ef2;
+}
+a:hover, a:link:hover, a:visited:hover {
+  color: #496bf0;
+}
+a:focus, a:link:focus, a:visited:focus {
+  color: #3258ee;
+}
+a:active, a:link:active, a:visited:active {
+  color: #1a44ec;
+}
+a:hover, a:focus, a:active, a:link:hover, a:link:focus, a:link:active, a:visited:hover, a:visited:focus, a:visited:active {
+  text-decoration: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  user-select: none !important;
+  appearance: none !important;
+}
+
 nav {
   background-color: #333;
   width: 100%;
@@ -412,15 +439,16 @@ button, .button, [role=button], [type=button],
 [type=reset], [type=submit] {
   -webkit-touch-callout: none !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  user-select: none !important;
   appearance: none !important;
   vertical-align: middle;
-  user-select: none;
   cursor: pointer;
   font-weight: 600;
   font-size: 1em;
   padding: 0.5em 0.75em;
   border-radius: 0.25em;
   letter-spacing: 0.5px;
+  color: #343a40;
   background-color: #dfdfdf;
   border: 2px solid #dfdfdf;
   border: none !important;
@@ -446,21 +474,26 @@ button, .button, [role=button], [type=button],
 button:hover, .button:hover, [role=button]:hover, [type=button]:hover,
 [type=reset]:hover, [type=submit]:hover {
   background-color: #cbcbcb;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  user-select: none !important;
 }
 button:focus, .button:focus, [role=button]:focus, [type=button]:focus,
 [type=reset]:focus, [type=submit]:focus {
   background-color: #b6b6b6;
+  -webkit-touch-callout: none !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  user-select: none !important;
   outline-color: #617ef2;
   box-shadow: 0 0 0 6px rgba(97, 126, 242, 0.25);
-  -webkit-touch-callout: none !important;
 }
 button:active, .button:active, [role=button]:active, [type=button]:active,
 [type=reset]:active, [type=submit]:active {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   background-color: #a2a2a2;
   transform: translate3d(0, 2px, 0);
   -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  user-select: none !important;
 }
 
 /* Apply Button and Button-like Control Styles */
@@ -515,6 +548,56 @@ ul.buttons li, .button-list li {
 }
 ul.buttons li *, .button-list li * {
   margin: 0 !important;
+}
+
+[type=color], [type=date],
+[type=datetime], [type=search],
+[type=datetime-local], [type=tel],
+[type=email], [type=month],
+[type=number], [type=password],
+[type=text], [type=time], [type=url],
+[type=week], input:not([type]), textarea {
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  user-select: none !important;
+  appearance: none !important;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  line-height: 1;
+  background-color: #fff;
+  border: 2px solid lightgray;
+  font-size: 1em;
+  color: #343a40;
+  border-radius: 0.25em;
+  margin-bottom: 1.5em;
+  background-color: whitesmoke;
+}
+
+::placeholder {
+  color: lightgray;
+}
+
+label {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+form, fieldset, legend {
+  display: block;
+  width: 100%;
+  margin: 0 auto 1em;
+  border: none;
+  background-color: #fff;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+}
+
+legend {
+  font-size: x-large;
 }
 
 /*# sourceMappingURL=style.css.map */
